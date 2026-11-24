@@ -132,7 +132,11 @@ body.orbital-counting #jeux-conseilles a:focus-visible {
 <script>
 (()=>{
 const $ = id => document.getElementById(id);
-const values = [215,310,153,300,251,305,531,150,124,408,562,607,690,724,785,836,907,999];
+const levelValues = [
+  [215,310,153,300,251,305,531,150,124,408,562,607,690,724,785,836,907,999],
+  [132,267,394,420,506,681,743,875,960,109,284,357,470,591,603,718,852,986]
+];
+let values = levelValues[0];
 const levelButtons = [$("start"), $("startMixed")];
 let level = 0;
 let i = 0;
@@ -175,6 +179,7 @@ function setLevel(nextLevel) {
 }
 function startLevel(nextLevel) {
   setLevel(nextLevel);
+  values = levelValues[nextLevel - 1];
   i = 0;
   score = 0;
   $('score').textContent = 'Score : 0';

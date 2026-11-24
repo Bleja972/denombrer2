@@ -42,7 +42,64 @@ h1{margin:5px 0;color:var(--b)}.brand{font-weight:900;color:#8b5b2d}.muted{color
 .finalPct{text-align:center;font-size:1.4rem;font-weight:900}
 </style>
 <link rel="stylesheet" href="https://bleja972.github.io/evaluation_periode1_numeration/arcade.css?v=mission-orbitale-1">
-</head><body>
+<style>
+/* Le panneau de fin de partie reprend les couleurs de la mission orbitale. */
+body.orbital-counting #jeux-conseilles {
+  margin: 18px 0;
+  padding: clamp(14px, 3vw, 22px);
+  border: 1px solid #49dcff;
+  border-radius: 16px;
+  background: radial-gradient(ellipse at top left, #10263a, transparent 68%), #070b14;
+  box-shadow: 0 5px 0 #000, 0 0 18px #20d8ff45, inset 0 0 14px #26c6ff18;
+  color: #e6f7ff;
+  font: inherit;
+}
+body.orbital-counting #jeux-conseilles h2 {
+  color: var(--gold);
+  font: 850 clamp(1.15rem, 3vw, 1.5rem)/1.2 system-ui, sans-serif;
+  text-shadow: 0 0 10px #ffc74055;
+}
+body.orbital-counting #jeux-conseilles .jc-links {
+  grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr));
+}
+body.orbital-counting #jeux-conseilles a {
+  --neon: #42e7ff;
+  --glow: #26ddff65;
+  border: 1px solid var(--neon);
+  background: linear-gradient(150deg, #172b44, #060912);
+  color: #f3fbff;
+  font: 800 1rem/1.4 system-ui, sans-serif;
+  box-shadow: 0 4px 0 #000, 0 0 12px var(--glow), inset 0 1px #ffffff35;
+  transition: transform .15s, box-shadow .15s, filter .15s;
+}
+body.orbital-counting #jeux-conseilles .jc-links a:nth-child(2) {
+  --neon: #ff79ce;
+  --glow: #ff59bd60;
+}
+body.orbital-counting #jeux-conseilles .jc-home {
+  --neon: #ffd45f;
+  --glow: #ffca4960;
+  color: #ffdf82;
+}
+body.orbital-counting #jeux-conseilles a:hover {
+  filter: brightness(1.22);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #000, 0 0 18px var(--glow), inset 0 1px #ffffff45;
+}
+body.orbital-counting #jeux-conseilles a:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #000, 0 0 10px var(--glow);
+}
+body.orbital-counting #jeux-conseilles a:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  body.orbital-counting #jeux-conseilles a { transition: none; }
+  body.orbital-counting #jeux-conseilles a:is(:hover, :active) { transform: none; }
+}
+</style>
+</head><body class="orbital-counting">
 <canvas id="stars" aria-hidden="true"></canvas>
 <div class="wrap">
 <header class="mast"><div class="mastbar"><div class="masttext">
